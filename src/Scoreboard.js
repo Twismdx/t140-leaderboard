@@ -1,7 +1,7 @@
-import Overlay from './Overlay';
+
 import { useState, useEffect } from 'react';
 import './App.css';
-import PlayerIcon from './PlayerIcon';
+
 
 function App() {
   const [ scores, setScores ] = useState([]);
