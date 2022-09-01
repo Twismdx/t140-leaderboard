@@ -1,34 +1,36 @@
 import React from 'react';
 
-const Leaders = ({ rankings }) => {
-    return (
-        <iframe title="Leaderboard" sandbox='allow-scripts, allow-same-origin'>
+const Leaders = ({ rankings, title }) => {
+    return ( 
         <div className="getLeaderboard"> 
-        <h1>T140 Leaderboard</h1>
+        <h1>{title.t140EventName}LeaderBoard</h1>
         <table>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Raw Avg</th>
-            <th>Target Avg</th>
-            <th>Raw Score</th>
-            <th>Event Points</th>
-          </tr>
-              {rankings.map((rankings, index) => {
-                return (
-                <tr>
-                <td>{index+1}</td>
-                <td>{rankings.givenName} {rankings.surname}<span>   ({rankings.division})</span></td>
-                <td>{rankings.rawScoreAvg.toFixed(2)}</td>
-                <td>{rankings.targetAvg.toFixed(2)}</td>
-                <td>{rankings.rawScore}</td>
-                <td>{rankings.score.toFixed(2)}</td>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Raw Avg</th>
+              <th>Target Avg</th>
+              <th>Raw Score</th>
+              <th>Event Points</th>
             </tr>
+          </thead>
+              {rankings.map((stats) => {
+                return (
+                  <tbody>
+                    <tr>
+                      <td>{stats.position}</td>
+                      <td>{stats.givenName} {stats.surname}<span>   ({stats.division})</span></td>
+                      <td>{stats.rawScoreAvg.toFixed(2)}</td>
+                      <td>{stats.targetAvg.toFixed(2)}</td>
+                      <td>{stats.rawScore}</td>
+                      <td>{stats.score.toFixed(2)}</td>
+                    </tr>
+                  </tbody>
                 )
                 })}
             </table>
             </div>
-            </iframe>
           )
       }
 
