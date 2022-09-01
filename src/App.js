@@ -7,7 +7,7 @@ function App() {
 const [ rankings, setRankings ] = useState([]);
 
 var myHeaders = new Headers();
-myHeaders.append("Ocp-Apim-Subscription-Key", "a5a933d50f7b40928d1e0c0612903033");
+myHeaders.append("Ocp-Apim-Subscription-Key", "0c586357689b4d308e362d2c03de77a3");
 
 var requestOptions = {
   method: 'GET',
@@ -16,7 +16,7 @@ var requestOptions = {
 };
 
 const getLeaderboard = async () => {
-const response = await fetch("https://t140apim.azure-api.net/demoT140LivestreamApi/GetLeaderboard?T140EventId=499cd369-8583-4fad-92dc-14b5d48ab445", requestOptions)
+const response = await fetch("https://t140apim.azure-api.net/T140LivestreamApi/GetLeaderboard?T140EventId=2bb25d1b-2b98-493c-9dc5-e78538e3f42a", requestOptions)
 const data = await response.json();
 
     setRankings(data);
