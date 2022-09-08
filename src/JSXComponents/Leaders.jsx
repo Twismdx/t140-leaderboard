@@ -33,7 +33,7 @@ function Leaders({ rankings, title }) {
 							</tr>
 						</tbody>
 					);
-				})}{' '}
+				})}
 			</table>
 		</div>
 	);

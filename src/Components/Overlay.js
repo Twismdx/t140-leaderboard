@@ -141,7 +141,7 @@ const ScoreBoardSVG = ({ scores, title }) => {
 							transform='matrix(1.0668 0 0 1 220.6237 689.5446)'
 							className='st0 st10 st13'
 						>
-							{' '}
+							
 						</text>
 						<text
 							transform='matrix(1.0668 0 0 1 227.3361 689.5446)'
@@ -204,9 +204,7 @@ const ScoreBoardSVG = ({ scores, title }) => {
 						<text
 							transform='matrix(1.0668 0 0 1 983.9675 689.6803)'
 							className='st0 st10 st13'
-						>
-							{' '}
-						</text>
+						></text>
 						<text
 							transform='matrix(1.0668 0 0 1 991.2927 689.6803)'
 							className='st0 st10 st15'

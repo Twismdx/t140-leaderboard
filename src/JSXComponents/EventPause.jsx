@@ -7,7 +7,6 @@ const Pause = ({ title }) => {
 		<div className='pause'>
 			<div>
 				<h1>
-					{' '}
 					{title.t140EventName}
 					Leaderboard
 				</h1>

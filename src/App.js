@@ -27,7 +27,7 @@ function App() {
 
 	var params = eventId;
 	var urlPrefix2 =
-		'https://t140apim.azure-api.net/demoT140LivestreamApi/GetScores?T140EventId=';
+		'https://t140apim.azure-api.net/demoT140LivestreamApi/GetLeaderboard?T140EventId=';
 	var url2 = urlPrefix2 + encodeURIComponent(params);
 
 	axios({
