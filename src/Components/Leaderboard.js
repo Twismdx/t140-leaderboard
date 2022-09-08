@@ -10,13 +10,13 @@ function Leaderboard({ eventId }) {
 
   useEffect(() => { 
 
-    var params = (eventId);
+    var params = eventId[0].t140EventId;
     var urlPrefix = "https://t140apim.azure-api.net/demoT140LivestreamApi/GetScores?T140EventId=";
     var url = urlPrefix + encodeURIComponent(params)
   
     $.ajax({
       url: url,
-      data: {
+      headers: {
         "Ocp-Apim-Subscription-Key": "a5a933d50f7b40928d1e0c0612903033"
       },
       type: "GET",
@@ -24,10 +24,10 @@ function Leaderboard({ eventId }) {
     })
     .then(response => response.json())
     .then(
-      (data) => {   
+      (data) => {
 
-        setRankings(data);
-      })
+        setRankings(data)
+    })  
   
     }, [])
   
