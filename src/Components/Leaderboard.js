@@ -3,7 +3,6 @@ import '../App.css';
 import Leaders from '../JSXComponents/Leaders';
 import title from './Scoreboard';
 import $ from 'jquery';
-import ajax from 'ajax';
 
 function Leaderboard({ eventId }) {
 
