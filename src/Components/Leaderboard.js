@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import '../App.css';
 import Leaders from '../JSXComponents/Leaders';
 import title from './Scoreboard';
-import axios from 'axios';
+import $ from 'jquery';
+import ajax from 'ajax';
 
 function Leaderboard({ eventId }) {
 
