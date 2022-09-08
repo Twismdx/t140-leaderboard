@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import $ from 'jquery';
-import Leaders from './JSXComponents/Leaders';
 import title from './Components/Scoreboard';
+import Leaders from './JSXComponents/Leaders.jsx';
 
 function App() {
-        
+  
     const [ eventId, setEventId ] = useState([]);
+    const [ rankings, setRankings ] = useState([]);
+    const [ title, settitles ] = useState([]);
     
     useEffect(() => { 
 
@@ -23,36 +25,10 @@ function App() {
             .then(function (data) {
                     console.log(data);
                     setEventId(data[0].t140EventId);  
-                })
+                    
         
-            }, [])
-
   
-    return (
-        <div className="App">
-            <Leaderboard eventId={eventId}/>
-        </div>
-    )
-}
-
-function LeaderboardChild({ eventId }) {
-
-    return (
-      <>
-        {eventId.map(eventId => (
-          <li key={eventId.id}>{eventId.name}</li>
-        ))}
-      </>  
-    );
-  }
-  
-  function LeaderBoard(eventId) {
-  
-    const [ rankings, setRankings ] = useState([]);
-  
-    useEffect(() => { 
-  
-      var params = eventId;
+      var params = data[0].t140EventId;
       var urlPrefix = "https://t140apim.azure-api.net/demoT140LivestreamApi/GetScores?T140EventId=";
       var url = urlPrefix + encodeURIComponent(params)
     
@@ -66,15 +42,16 @@ function LeaderboardChild({ eventId }) {
         })
         .then(function (data) {
             setRankings(data)
+            settitles(data);
         })
-        }, [eventId])
-    
-    return ( 
-  
-      <div className="leaderboard">
-        <Leaders rankings={rankings} title={title} />
-      </div>
+    })
+        }, [])
+
+    return (
+        <div>
+            <Leaders title={title} rankings={rankings}/>
+        </div>
     )
-  }
+}
   
   export default App;
