@@ -1,7 +1,7 @@
 import Overlay from './Overlay';
 import { useState, useEffect } from 'react';
 import '../App.css';
-import PlayerIcon from '../JSX Components/PlayerIcon';
+import PlayerIcon from '../JSXComponents/PlayerIcon';
 
 const API_SCORES = './data.json'
 

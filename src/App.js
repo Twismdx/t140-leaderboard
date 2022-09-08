@@ -1,36 +1,37 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import Leaders from './Leaders';
-import title from './Scoreboard';
+import React, {useState, useEffect} from 'react';
+import Leaderboard from './Components/Leaderboard';
 
-function App() {
-const [ rankings, setRankings ] = useState([]);
-
-var myHeaders = new Headers();
-myHeaders.append("Ocp-Apim-Subscription-Key", "0c586357689b4d308e362d2c03de77a3");
-
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
-
-const getLeaderboard = async () => {
-const response = await fetch("https://t140apim.azure-api.net/T140LivestreamApi/GetLeaderboard?T140EventId=2bb25d1b-2b98-493c-9dc5-e78538e3f42a", requestOptions)
-const data = await response.json();
-
-    setRankings(data);
-  }
-
-  useEffect(() => {
-    getLeaderboard();
-  }, []);
-
-  return ( 
-    <div className="leaderboard">
-      <Leaders rankings={rankings} title={title} />
-    </div>
-  )
+const App = () => {
+        
+    const [ eventId, setEventId ] = useState([]);
+    
+    var myHeaders = new Headers();
+        myHeaders.append("apikey", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53a2Jxb2l5cmtpeWtsb252ZXp2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjE5OTk5ODAsImV4cCI6MTk3NzU3NTk4MH0.cNsf3ZcAMPE3N8aWFjcckNHeqyUGuhjOvd0Q_w8-fow");
+    
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+    
+    async function getEventId() {
+        await fetch("https://nwkbqoiyrkiyklonvezv.supabase.co/rest/v1/livestream", requestOptions)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response[0].t140EventId);
+            setEventId(response[0].t140EventId);  
+        });   
+    }
+        console.log(eventId);
+    useEffect(() => {
+      getEventId();
+    }, []);
+  
+    return (
+        <div className="App">
+            <Leaderboard eventId={eventId}/>
+        </div>
+    )
 }
-
-export default App;
+  
+  export default App;
