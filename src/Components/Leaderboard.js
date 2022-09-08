@@ -15,22 +15,18 @@ function Leaderboard({ eventId }) {
     var urlPrefix = "https://t140apim.azure-api.net/demoT140LivestreamApi/GetScores?T140EventId=";
     var url = urlPrefix + encodeURIComponent(params)
   
-    $.ajax({
-      url: url,
-      headers: {
-        "Ocp-Apim-Subscription-Key": "a5a933d50f7b40928d1e0c0612903033"
-      },
-      type: "GET",
-      dataType: "json",
-    })
-    .then(response => response.json())
-    .then(
-      (data) => {
-
-        setRankings(data)
-    })  
-  
-    }, [eventId])
+        $.ajax({
+        url: url,
+        headers: {
+          "Ocp-Apim-Subscription-Key": "a5a933d50f7b40928d1e0c0612903033"
+        },
+        type: "GET",
+        dataType: "json",
+      })
+      .then(function (data) {
+          setRankings(data)
+      })
+      }, [eventId])
   
   return ( 
 
