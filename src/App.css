@@ -47,7 +47,7 @@ html head body {
 .getLeaderboard {
 	width: 800px;
 	margin: 60px auto;
-	font-family: sans-serif;
+	font-family: semiBold;
 	color: #213b4c;
 }
 .getLeaderboard h1 {
@@ -126,7 +126,7 @@ html head body {
 	color: white;
 }
 .none {
-	visible: hidden;
+	visibility: hidden;
 	opacity: 0;
 }
 
