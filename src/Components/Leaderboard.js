@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import '../App.css';
 import Leaders from '../JSXComponents/Leaders';
 import title from './Scoreboard';
+import axios from 'axios';
 
 function Leaderboard({ eventId }) {
 
@@ -16,9 +17,9 @@ function Leaderboard({ eventId }) {
     redirect: 'follow'
   };
 
-  const GetLeaderboard = async () => {
-  const response = await fetch(`https://t140apim.azure-api.net/T140LivestreamApi/GetLeaderboard?T140EventId=`+eventId, requestOptions)
-  const data = await response.json();
+    const GetScores = async () => {
+    const response =  await axios.get(`https://t140apim.azure-api.net/demoT140LivestreamApi/GetScores?T140EventId=`+eventId, requestOptions)
+    const data = response.data
 
     setRankings(data);
   }
