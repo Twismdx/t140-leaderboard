@@ -1,45 +1,91 @@
 @font-face {
-  font-family: semiBold;
-  src: url(./fonts/open-sans.semibold.ttf);
+	font-family: semiBold;
+	src: url(./fonts/open-sans.semibold.ttf);
 }
 @font-face {
-  font-family: extraBold;
-  src: url(./fonts/open-sans.bold.ttf);
+	font-family: extraBold;
+	src: url(./fonts/open-sans.bold.ttf);
 }
 
-  .st0{fill:#CE0E2D;}
-	.st1{fill:#101820;}
-	.st2{fill:#17FF7A;}
-	.st3{fill:#3C3841;}
-	.st4{fill:#0D0704;}
-	.st5{fill:#6D6E71;}
-	.st6{fill:#007078;}
-	.st7{fill:#005866;}
-	.st8{fill:#AD0E2D;}
-	.st9{fill:#CBCBCB;stroke:#FFFFFF;stroke-width:2.2496;stroke-miterlimit:10;}
-	.st10{font-family:'extraBold';}
-	.st11{font-size:21.1835px;}
-	.st12{fill:#FFFFFF;}
-	.st13{font-size:13.5924px;}
-	.st14{fill:#CBCBCB;}
-	.st15{font-size:14.2757px;}
-	.st16{fill:#FFDD00;}
-	.st17{fill:#FF1111;}
-	.st18{font-family:'semiBold';}
-	.st19{font-size:28.5514px;}
-	.st20{font-size:20.3987px;}
-	.st21{font-size:15.2973px;}
+.st0 {
+	fill: #ce0e2d;
+}
+.st1 {
+	fill: #101820;
+}
+.st2 {
+	fill: #17ff7a;
+}
+.st3 {
+	fill: #3c3841;
+}
+.st4 {
+	fill: #0d0704;
+}
+.st5 {
+	fill: #6d6e71;
+}
+.st6 {
+	fill: #007078;
+}
+.st7 {
+	fill: #005866;
+}
+.st8 {
+	fill: #ad0e2d;
+}
+.st9 {
+	fill: #cbcbcb;
+	stroke: #ffffff;
+	stroke-width: 2.2496;
+	stroke-miterlimit: 10;
+}
+.st10 {
+	font-family: 'extraBold';
+}
+.st11 {
+	font-size: 21.1835px;
+}
+.st12 {
+	fill: #ffffff;
+}
+.st13 {
+	font-size: 13.5924px;
+}
+.st14 {
+	fill: #cbcbcb;
+}
+.st15 {
+	font-size: 14.2757px;
+}
+.st16 {
+	fill: #ffdd00;
+}
+.st17 {
+	fill: #ff1111;
+}
+.st18 {
+	font-family: 'semiBold';
+}
+.st19 {
+	font-size: 28.5514px;
+}
+.st20 {
+	font-size: 20.3987px;
+}
+.st21 {
+	font-size: 15.2973px;
+}
 
 .svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+	width: 100%;
+	height: 100%;
+	display: block;
 }
 
 .f {
-  direction: rtl;
+	direction: rtl;
 }
-
 
 html head body {
 	background: #fafafa;
@@ -84,16 +130,16 @@ html head body {
 }
 .getLeaderboard table th:nth-child(4) {
 	text-align: right;
-	padding-right: 30px
+	padding-right: 30px;
 }
 .getLeaderboard table th:nth-child(2) {
 	text-align: center;
 }
 .getLeaderboard table th:nth-child(1) {
 	text-align: center;
-	padding-right: 30px
+	padding-right: 30px;
 }
-.getLeaderboard table tr:nth-child(2n+1) {
+.getLeaderboard table tr:nth-child(2n + 1) {
 	background: #1e3344;
 }
 .getLeaderboard table tr td {
@@ -129,4 +175,3 @@ html head body {
 	visibility: hidden;
 	opacity: 0;
 }
-

@@ -44,7 +44,10 @@ function Scoreboard() {
 	return (
 		<div className='Scoreboard'>
 			<div className='container'>
-				<Overlay scores={scores} title={title} />
+				<Overlay
+					scores={scores}
+					title={title}
+				/>
 				{title?.length > 0 ? (
 					<div className='container'>
 						{title.map((title) => (

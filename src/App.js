@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Leaders from './JSXComponents/Leaders.jsx';
 import axios from 'axios';
 
-function App() {
+export default function App() {
 	const [eventId, setEventId] = useState([]);
+
 	const [rankings, setRankings] = useState([]);
+
 	const [title, settitles] = useState([]);
 
 	useEffect(() => {
@@ -25,28 +27,39 @@ function App() {
 		});
 	}, []);
 
-	var params = eventId;
-	var urlPrefix2 =
-		'https://t140apim.azure-api.net/demoT140LivestreamApi/GetLeaderboard?T140EventId=';
-	var url2 = urlPrefix2 + encodeURIComponent(params);
-
-	axios({
-		url: url2,
-		headers: {
-			'Ocp-Apim-Subscription-Key': 'a5a933d50f7b40928d1e0c0612903033',
-		},
-		type: 'GET',
-		dataType: 'json',
-	}).then((response) => {
-		setRankings(response.data);
-		settitles(response.data);
-	});
-
 	return (
 		<div>
-			<Leaders title={title} rankings={rankings} />
+			<Stats eventId={eventId} />
 		</div>
 	);
-}
 
-export default App;
+	function Stats({ eventId }) {
+		useEffect(() => {
+			var params = eventId;
+			var urlPrefix2 =
+				'https://t140apim.azure-api.net/demoT140LivestreamApi/GetLeaderboard?T140EventId=';
+			var url2 = urlPrefix2 + encodeURIComponent(params);
+
+			axios({
+				url: url2,
+				headers: {
+					'Ocp-Apim-Subscription-Key': 'a5a933d50f7b40928d1e0c0612903033',
+				},
+				type: 'GET',
+				dataType: 'json',
+			}).then((response) => {
+				setRankings(response.data);
+				settitles(response.data);
+			});
+		}, []);
+
+		return (
+			<div>
+				<Leaders
+					title={title}
+					rankings={rankings}
+				/>
+			</div>
+		);
+	}
+}
