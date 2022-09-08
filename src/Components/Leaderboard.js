@@ -3,6 +3,7 @@ import '../App.css';
 import Leaders from '../JSXComponents/Leaders';
 import title from './Scoreboard';
 import $ from 'jquery';
+import '../App';
 
 function Leaderboard({ eventId }) {
 
@@ -10,7 +11,7 @@ function Leaderboard({ eventId }) {
 
   useEffect(() => { 
 
-    var params = eventId[0].t140EventId;
+    var params = eventId;
     var urlPrefix = "https://t140apim.azure-api.net/demoT140LivestreamApi/GetScores?T140EventId=";
     var url = urlPrefix + encodeURIComponent(params)
   
@@ -29,7 +30,7 @@ function Leaderboard({ eventId }) {
         setRankings(data)
     })  
   
-    }, [])
+    }, [eventId])
   
   return ( 
 

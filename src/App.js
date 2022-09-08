@@ -22,11 +22,11 @@ const App = () => {
             .then(
                 (data) => { 
 
-                    setEventId(data);  
-            })
+                    setEventId(data[0].t140EventId);  
+            
         
             }, [])
- 
+        })
   
     return (
         <div className="App">
