@@ -8,26 +8,29 @@ function Leaderboard({ eventId }) {
 
   const [ rankings, setRankings ] = useState([]);
 
-  var myHeaders = new Headers();
-    myHeaders.append("Ocp-Apim-Subscription-Key", "0c586357689b4d308e362d2c03de77a3");
+  useEffect(() => { 
 
-  var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-  };
+    var params = (eventId);
+    var urlPrefix = "https://t140apim.azure-api.net/demoT140LivestreamApi/GetScores?T140EventId=";
+    var url = urlPrefix + encodeURIComponent(params)
+  
+    $.ajax({
+      url: url,
+      data: {
+        "Ocp-Apim-Subscription-Key": "a5a933d50f7b40928d1e0c0612903033"
+      },
+      type: "GET",
+      dataType: "json",
+    })
+    .then(response => response.json())
+    .then(
+      (data) => {   
 
-    const GetScores = async () => {
-    const response =  await axios.get(`https://t140apim.azure-api.net/demoT140LivestreamApi/GetScores?T140EventId=`+eventId, requestOptions)
-    const data = await response.data
-
-    setRankings(data);
-  }
-
-  useEffect(() => {
-    GetLeaderboard();
-  }, []);
-
+        setRankings(data);
+      })
+  
+    }, [])
+  
   return ( 
 
     <div className="leaderboard">
