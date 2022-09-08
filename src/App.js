@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Leaderboard from './Components/Leaderboard';
 import $ from 'jquery';
 
-const App = () => {
+function App() {
         
     const [ eventId, setEventId ] = useState([]);
     

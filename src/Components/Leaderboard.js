@@ -5,7 +5,18 @@ import title from './Scoreboard';
 import $ from 'jquery';
 import '../App';
 
-function Leaderboard({ eventId }) {
+function LeaderboardChild({ eventId }) {
+
+  return (
+    <>
+      {eventId.map(eventId => (
+        <li key={eventId.id}>{eventId.name}</li>
+      ))}
+    </>  
+  );
+}
+
+function LeaderBoard(eventId) {
 
   const [ rankings, setRankings ] = useState([]);
 
@@ -36,4 +47,4 @@ function Leaderboard({ eventId }) {
   )
 }
 
-export default Leaderboard;
+export default LeaderboardChild;
