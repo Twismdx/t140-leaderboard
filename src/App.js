@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from 'react';
-import $ from 'jquery';
 import Leaders from './JSXComponents/Leaders.jsx';
 import axios from 'axios';
 
