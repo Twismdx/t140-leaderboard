@@ -28,7 +28,7 @@ export default function App() {
 			<Stats eventId={eventId} />
 		</div>
 	);
-}
+
 
 function Stats({ eventId }) {
 	const [rankings, setRankings] = useState([]);
@@ -62,4 +62,5 @@ function Stats({ eventId }) {
 			/>
 		</div>
 	);
+	}
 }
