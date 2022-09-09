@@ -16,7 +16,8 @@ function Leaders({ rankings, title }) {
 						<th>Event Points</th>
 					</tr>
 				</thead>
-				{rankings.map((stats) => (
+				{rankings.map((stats) => {
+					return(
 						<tbody>
 							<tr>
 								<td>{stats.position}</td>
@@ -31,7 +32,8 @@ function Leaders({ rankings, title }) {
 								<td>{stats.score.toFixed(2)}</td>
 							</tr>
 						</tbody>
-				))}
+					);
+				})}
 			</table>
 		</div>
 	);

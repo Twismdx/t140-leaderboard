@@ -5,10 +5,6 @@ import axios from 'axios';
 export default function App() {
 	const [eventId, setEventId] = useState([]);
 
-	const [rankings, setRankings] = useState([]);
-
-	const [title, settitles] = useState([]);
-
 	useEffect(() => {
 		var urlPrefix =
 			'https://nwkbqoiyrkiyklonvezv.supabase.co/rest/v1/livestream';
@@ -32,7 +28,11 @@ export default function App() {
 			<Stats eventId={eventId} />
 		</div>
 	);
+	
+	const [rankings, setRankings] = useState([]);
 
+	const [title, settitles] = useState([]);
+	
 	function Stats({ eventId }) {
 		useEffect(() => {
 			var params = eventId;
