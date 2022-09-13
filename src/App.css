@@ -1,9 +1,9 @@
 @font-face {
-	font-family: semiBold;
+	font-family: 'semiBold';
 	src: url(./fonts/open-sans.semibold.ttf);
 }
 @font-face {
-	font-family: extraBold;
+	font-family: 'extraBold';
 	src: url(./fonts/open-sans.bold.ttf);
 }
 
@@ -88,12 +88,12 @@
 }
 
 html head body {
-	background: #fafafa;
+	backdrop-filter: blur(8px);
 }
 .getLeaderboard {
 	width: 800px;
 	margin: 60px auto;
-	font-family: semiBold;
+	font-family: 'semiBold';
 	color: #213b4c;
 }
 .getLeaderboard h1 {
@@ -174,4 +174,45 @@ html head body {
 .none {
 	visibility: hidden;
 	opacity: 0;
+}
+.pauseLeft {
+	font-family: 'extraBold';
+	float: left;
+	text-indent: 150%;
+	text-align: center;
+}
+
+.pauseRight {
+	font-family: 'extraBold';
+	float: right;
+	text-indent: -150%;
+	
+}
+body {
+	background: transparent;
+}
+
+svg {
+	font-family: 'extraBold';
+	position: absolute; 
+	width: 100%; height: 100%;
+}
+svg text {
+	text-transform: uppercase;
+	animation: stroke 5s infinite alternate;
+	stroke-width: 3;
+	stroke: rgb(231, 11, 11);
+	font-size: 72px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,20,0); stroke: rgb(231, 11, 11);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 3;
+	}
+	70%  {fill: rgba(72,138,20,0); stroke: rgba(231, 11, 11); }
+	80%  {fill: rgba(72,138,20,0); stroke: rgba(231, 11, 11); stroke-width: 3; }
+	100% {
+		fill: rgb(250, 33, 44);; stroke: rgba(54,95,160,0); 
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
 }

@@ -19,9 +19,9 @@ export default function App() {
 			type: 'GET',
 			dataType: 'json',
 		}).then((response) => {
-			setEventId(response.data[0].t140EventId);
+			setEventId(response.data[0].t140EventId);	
+		}, [eventId]);
 		});
-	}, []);
 
 	return (
 		<div>
@@ -51,8 +51,9 @@ function Stats({ eventId }) {
 		}).then((response) => {
 			setRankings(response.data);
 			settitles(response.data);
-		});
+		
 	}, []);
+		});
 
 	return (
 		<div>
@@ -60,6 +61,26 @@ function Stats({ eventId }) {
 				title={title}
 				rankings={rankings}
 			/>
+			<div className='pauseLeft'>
+				<svg viewBox="0 0 1320 300">
+					<text x="12.5%" y="-20%" dy=".0em" text-anchor="middle">
+						Event
+					</text>
+					<text x="87.5%" y="-42%" dy=".90em" text-anchor="middle">
+						Paused
+					</text>
+				</svg>	
+			</div>
+			<div className='pauseRight'>
+				<svg viewBox="0 0 1320 300">
+					<text x="10%" y="50%" dy=".0em" text-anchor="middle">
+						Event
+					</text>
+					<text x="10%" y="50%" dy=".90em" text-anchor="middle">
+						Paused
+					</text>
+				</svg>	
+			</div>
 		</div>
 	);
 	}

@@ -18,7 +18,7 @@ function Leaders({ rankings, title }) {
 				</thead>
 				{rankings.map((stats) => {
 					return(
-						<tbody>
+						<tbody key={stats}>
 							<tr>
 								<td>{stats.position}</td>
 								<td>
